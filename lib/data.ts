@@ -6,9 +6,14 @@ export type Term = {
   definition: string
   origin: string
   examples: string[]
-  relatedTerms: string[]
   tags: Tag[]
+  relatedTerms: string[]
+  links?: {
+    urbanDictionary?: string
+    knowYourMeme?: string
+  }
 }
+
 
 export const terms: Term[] = [
   {
