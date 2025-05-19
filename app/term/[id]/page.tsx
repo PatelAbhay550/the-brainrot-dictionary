@@ -5,6 +5,36 @@ import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { ChevronLeft, Share2, ArrowRight, ExternalLink } from 'lucide-react'
 import { TagIcon } from '@/components/tag-icon'
+export async function generateMetadata({
+  params,
+}: {
+  params: { id: string }
+}): Promise<Metadata> {
+  const term = await getTermById(params.id)
+
+  if (!term) {
+    return {
+      title: 'Not Found',
+      description: 'This slang term could not be found.',
+    }
+  }
+
+  return {
+    title: `${term.term} - Internet Slang Meaning`,
+    description: term.definition.slice(0, 160), // truncate to 160 characters for SEO
+    openGraph: {
+      title: `${term.term} - Internet Slang Meaning`,
+      description: term.definition.slice(0, 160),
+      url: `https://the-brainrot-dictionary.vercel.app/term/${term.id}`,
+      type: 'article',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${term.term} - Internet Slang Meaning`,
+      description: term.definition.slice(0, 160),
+    },
+  }
+}
 
 export default async function TermPage({ params }: { params: { id: string } }) {
   const term = await getTermById(params.id)
