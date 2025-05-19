@@ -6,13 +6,13 @@ import { Badge } from '@/components/ui/badge'
 import { ChevronLeft, Share2, ArrowRight, ExternalLink } from 'lucide-react'
 import { TagIcon } from '@/components/tag-icon'
 
-export default function TermPage({ params }: { params: { id: string } }) {
-  const term = getTermById(params.id)
-  
+export default async function TermPage({ params }: { params: { id: string } }) {
+  const term = await getTermById(params.id)
+
   if (!term) {
     return notFound()
   }
-  
+
   const tagColors: Record<Tag, string> = {
     'TikTok': 'bg-pink-500/20 text-pink-500 border-pink-500/30',
     'Twitter': 'bg-blue-500/20 text-blue-500 border-blue-500/30',
@@ -45,37 +45,30 @@ export default function TermPage({ params }: { params: { id: string } }) {
         <div className="flex flex-wrap gap-2 mt-3">
           {term.tags.map(tag => (
             <Link key={tag} href={`/browse?tag=${tag}`}>
-              <Badge 
+              <Badge
                 variant="outline"
                 className={`cursor-pointer ${tagColors[tag]}`}
               >
-                
+                <TagIcon tag={tag} />
                 {tag}
               </Badge>
             </Link>
           ))}
         </div>
       </div>
-      
+
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         <div className="lg:col-span-2 space-y-8">
-          {/* Definition */}
           <section className="bg-card border rounded-lg p-6">
             <h2 className="text-xl font-semibold mb-4">Definition</h2>
-            <p className="text-muted-foreground">
-              {term.definition}
-            </p>
+            <p className="text-muted-foreground">{term.definition}</p>
           </section>
-          
-          {/* Origin */}
+
           <section className="bg-card border rounded-lg p-6">
             <h2 className="text-xl font-semibold mb-4">Origin</h2>
-            <p className="text-muted-foreground">
-              {term.origin}
-            </p>
+            <p className="text-muted-foreground">{term.origin}</p>
           </section>
-          
-          {/* Examples */}
+
           <section className="bg-card border rounded-lg p-6">
             <h2 className="text-xl font-semibold mb-4">Examples</h2>
             <div className="space-y-4">
@@ -87,62 +80,67 @@ export default function TermPage({ params }: { params: { id: string } }) {
             </div>
           </section>
         </div>
-        
+
         <div className="space-y-8">
-          {/* Related Terms */}
           <section className="bg-card border rounded-lg p-6">
             <h2 className="text-xl font-semibold mb-4">Related Terms</h2>
             <div className="space-y-3">
               {term.relatedTerms.length > 0 ? (
                 term.relatedTerms.map(relatedTermId => {
-                  const relatedTerm = getTermById(relatedTermId);
+                  const relatedTerm = getTermById(relatedTermId)
+                  if (!relatedTerm) return null
                   return (
-                    <Link 
-                      key={relatedTermId} 
+                    <Link
+                      key={relatedTermId}
                       href={`/term/${relatedTermId}`}
                       className="flex items-center justify-between p-3 rounded-md hover:bg-muted group transition-colors"
                     >
                       <span className="font-medium group-hover:text-primary transition-colors">
-                        {relatedTermId}
+                        {relatedTerm.term}
                       </span>
                       <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
                     </Link>
-                  );
+                  )
                 })
               ) : (
                 <p className="text-muted-foreground text-sm">No related terms available</p>
               )}
             </div>
           </section>
-          
-          {/* More Info */}
+
           <section className="bg-card border rounded-lg p-6">
             <h2 className="text-xl font-semibold mb-4">More Info</h2>
             <div className="space-y-3">
-              <a 
-                href="#" 
-                className="flex items-center justify-between p-3 rounded-md hover:bg-muted group transition-colors"
-                
-              >
-                <div className="flex items-center gap-2">
-                  <span className="font-medium group-hover:text-primary transition-colors">
-                    Urban Dictionary
-                  </span>
-                  <ExternalLink className="h-3.5 w-3.5 text-muted-foreground" />
-                </div>
-              </a>
-              <a 
-                href="#" 
-                className="flex items-center justify-between p-3 rounded-md hover:bg-muted group transition-colors"
-              
-              >
-                <div className="flex items-center gap-2">
-                  <span className="font-medium group-hover:text-primary transition-colors">
-                    Know Your Meme
-                  </span>
-                  <ExternalLink className="h-3.5 w-3.5 text-muted-foreground" />
-                </div>
-              </a>
+              {term.links?.urbanDictionary && (
+                <a
+                  href={term.links.urbanDictionary}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-between p-3 rounded-md hover:bg-muted group transition-colors"
+                >
+                  <div className="flex items-center gap-2">
+                    <span className="font-medium group-hover:text-primary transition-colors">
+                      Urban Dictionary
+                    </span>
+                    <ExternalLink className="h-3.5 w-3.5 text-muted-foreground" />
+                  </div>
+                </a>
+              )}
+              {term.links?.knowYourMeme && (
+                <a
+                  href={term.links.knowYourMeme}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-between p-3 rounded-md hover:bg-muted group transition-colors"
+                >
+                  <div className="flex items-center gap-2">
+                    <span className="font-medium group-hover:text-primary transition-colors">
+                      Know Your Meme
+                    </span>
+                    <ExternalLink className="h-3.5 w-3.5 text-muted-foreground" />
+                  </div>
+                </a>
+              )}
             </div>
           </section>
         </div>
