@@ -14,7 +14,6 @@ export type Term = {
   }
 }
 
-
 export const terms: Term[] = [
   {
     id: 'delulu',
@@ -27,7 +26,11 @@ export const terms: Term[] = [
       "My delulu is my solulu (My delusion is my solution)."
     ],
     relatedTerms: ['stan', 'parasocial', 'simp'],
-    tags: ['Delulu', 'Stan', 'TikTok']
+    tags: ['Delulu', 'Stan', 'TikTok'],
+    links: {
+      urbanDictionary: 'https://www.urbandictionary.com/define.php?term=Delulu',
+      knowYourMeme: 'https://knowyourmeme.com/memes/delulu'
+    }
   },
   {
     id: 'rizz',
@@ -40,7 +43,11 @@ export const terms: Term[] = [
       'W rizz, bro. Teach me your ways.'
     ],
     relatedTerms: ['W', 'L', 'simp'],
-    tags: ['TikTok', 'Twitter', 'Meme']
+    tags: ['TikTok', 'Twitter', 'Meme'],
+    links: {
+      urbanDictionary: 'https://www.urbandictionary.com/define.php?term=Rizz',
+      knowYourMeme: 'https://knowyourmeme.com/memes/rizz'
+    }
   },
   {
     id: 'no-cap',
@@ -53,98 +60,128 @@ export const terms: Term[] = [
       'I swear I saw her at the mall yesterday, no cap.'
     ],
     relatedTerms: ['fr', 'bussin', 'based'],
-    tags: ['Twitter', 'TikTok', 'Music']
+    tags: ['Twitter', 'TikTok', 'Music'],
+    links: {
+      urbanDictionary: 'https://www.urbandictionary.com/define.php?term=No%20Cap',
+      knowYourMeme: 'https://knowyourmeme.com/memes/no-cap'
+    }
   },
   {
     id: 'based',
     term: 'based',
-    definition: 'A term of approval for something considered authentic, agreeable, or admirable, often used to express appreciation for someone speaking their mind or holding a controversial opinion without concern for criticism.',
-    origin: 'Originally a derogatory term for someone addicted to crack cocaine, rapper Lil B reclaimed it as a positive term meaning being yourself. It was later adopted by various internet communities.',
+    definition: 'A term of approval for something considered authentic, agreeable, or admirable...',
+    origin: 'Originally a derogatory term for someone addicted to crack cocaine, rapper Lil B reclaimed it as a positive term...',
     examples: [
       'He just told the teacher the assignment was pointless. That\'s so based.',
       'That movie criticized everyone equally. Based director.',
       'Based take, I completely agree even though everyone\'s mad about it.'
     ],
     relatedTerms: ['W', 'chad', 'red-pilled'],
-    tags: ['Twitter', 'Gaming', 'Meme']
+    tags: ['Twitter', 'Gaming', 'Meme'],
+    links: {
+      urbanDictionary: 'https://www.urbandictionary.com/define.php?term=Based',
+      knowYourMeme: 'https://knowyourmeme.com/memes/based'
+    }
   },
   {
     id: 'sus',
     term: 'sus',
-    definition: 'Short for "suspicious" or "suspect," describing someone or something that seems questionable, shady, or untrustworthy.',
-    origin: 'While "sus" has been slang in Black and LGBTQ+ communities for decades, it gained massive popularity in 2020 through the game Among Us, where players must identify "suspicious" impostors.',
+    definition: 'Short for "suspicious" or "suspect," describing someone or something that seems questionable...',
+    origin: 'While "sus" has been slang in Black and LGBTQ+ communities for decades, it gained massive popularity in 2020 through the game Among Us...',
     examples: [
       'Why are you sneaking around the kitchen at 3 AM? That\'s kinda sus.',
       'The way he changed the subject when we mentioned the party was sus.',
       'Red is sus, I saw them vent in electrical.'
     ],
     relatedTerms: ['impostor', 'sussy', 'vent'],
-    tags: ['Gaming', 'Meme', 'TikTok']
+    tags: ['Gaming', 'Meme', 'TikTok'],
+    links: {
+      urbanDictionary: 'https://www.urbandictionary.com/define.php?term=Sus',
+      knowYourMeme: 'https://knowyourmeme.com/memes/sus'
+    }
   },
   {
     id: 'touch-grass',
     term: 'touch grass',
-    definition: 'An instruction for someone to go outside and experience the real world, implying they\'ve spent too much time online or are too invested in internet culture/drama.',
-    origin: 'Evolved from earlier phrases like "go outside" or "get a life," becoming widespread on Twitter and gaming communities around 2020-2021.',
+    definition: 'An instruction for someone to go outside and experience the real world...',
+    origin: 'Evolved from earlier phrases like "go outside" or "get a life," becoming widespread on Twitter and gaming communities...',
     examples: [
       'You\'ve been arguing with strangers on Twitter for 6 hours straight. Please touch grass.',
       'If you know all the lore from that series, you need to touch grass immediately.',
       'I haven\'t touched grass in weeks, this game is too addictive.'
     ],
     relatedTerms: ['grass-deficient', 'terminally-online', 'chronically-online'],
-    tags: ['Twitter', 'Gaming', 'Meme']
+    tags: ['Twitter', 'Gaming', 'Meme'],
+    links: {
+      knowYourMeme: 'https://knowyourmeme.com/memes/touch-grass'
+    }
   },
   {
     id: 'parasocial',
     term: 'parasocial',
-    definition: 'Describing a one-sided relationship where a person extends emotional energy, interest and time into a public figure who is unaware of their existence.',
-    origin: 'Originally an academic term from the 1950s to describe TV viewer relationships with personalities, now commonly used on social media to describe fan-influencer dynamics.',
+    definition: 'Describing a one-sided relationship where a person extends emotional energy...',
+    origin: 'Originally an academic term from the 1950s...',
     examples: [
-      'My parasocial relationship with that streamer is getting out of hand, I feel like we\'re friends.',
+      'My parasocial relationship with that streamer is getting out of hand...',
       'It\'s okay to enjoy content creators, just don\'t get too parasocial about it.',
-      'She refers to her favorite YouTuber by their first name like they know each other. Peak parasocial behavior.'
+      'She refers to her favorite YouTuber by their first name...'
     ],
     relatedTerms: ['stan', 'delulu', 'parafamily'],
-    tags: ['Twitter', 'TikTok', 'Stan']
+    tags: ['Twitter', 'TikTok', 'Stan'],
+    links: {
+      knowYourMeme: 'https://knowyourmeme.com/memes/parasocial'
+    }
   },
   {
     id: 'simp',
     term: 'simp',
-    definition: 'Someone who shows excessive admiration, attention, or affection towards another person (traditionally a man towards a woman), especially when that affection is not reciprocated.',
+    definition: 'Someone who shows excessive admiration, attention, or affection...',
     origin: 'While the term has been around since the 1980s, it gained massive popularity on TikTok and Twitch in 2019-2020.',
     examples: [
-      'He donated his entire paycheck to that streamer just so she\'d say his name. Major simp.',
+      'He donated his entire paycheck to that streamer just so she\'d say his name.',
       'I\'m not a simp, I just think she makes good content.',
       'Simping isn\'t a crime, let people enjoy things.'
     ],
     relatedTerms: ['stan', 'white knight', 'delulu'],
-    tags: ['TikTok', 'Twitter', 'Gaming']
+    tags: ['TikTok', 'Twitter', 'Gaming'],
+    links: {
+      urbanDictionary: 'https://www.urbandictionary.com/define.php?term=Simp',
+      knowYourMeme: 'https://knowyourmeme.com/memes/simp'
+    }
   },
   {
     id: 'npc',
     term: 'NPC',
-    definition: 'Used to describe a person who seems to lack original thought or personality, as if they\'re programmed like a Non-Player Character in a video game.',
-    origin: 'Derived from gaming terminology, where NPCs are computer-controlled characters with limited dialogue and predictable behavior patterns.',
+    definition: 'Used to describe a person who seems to lack original thought or personality...',
+    origin: 'Derived from gaming terminology, where NPCs are computer-controlled characters...',
     examples: [
-      'He just repeats whatever is trending without any critical thinking. Total NPC behavior.',
-      'I felt like an NPC in that conversation, just nodding and saying "yeah" repeatedly.',
+      'He just repeats whatever is trending without any critical thinking.',
+      'I felt like an NPC in that conversation...',
       'The café was full of NPCs all ordering the same viral TikTok drink.'
     ],
     relatedTerms: ['sheep', 'basic', 'normie'],
-    tags: ['Gaming', 'Meme', 'Twitter']
+    tags: ['Gaming', 'Meme', 'Twitter'],
+    links: {
+      urbanDictionary: 'https://www.urbandictionary.com/define.php?term=NPC',
+      knowYourMeme: 'https://knowyourmeme.com/memes/npc-wojak'
+    }
   },
   {
     id: 'stan',
     term: 'stan',
     definition: 'An extremely enthusiastic and devoted fan, often to the point of obsession.',
-    origin: 'Derived from the Eminem song "Stan" (2000) about an obsessive fan, later adopted as both a noun and verb in fan culture.',
+    origin: 'Derived from the Eminem song "Stan" (2000)...',
     examples: [
       'I stan her so hard, I\'ve watched every interview she\'s ever done.',
-      'The stans are fighting on Twitter again over who has better album sales.',
-      'I\'m a casual listener, not a stan. I don\'t know their birthdays or anything.'
+      'The stans are fighting on Twitter again...',
+      'I\'m a casual listener, not a stan...'
     ],
     relatedTerms: ['fandom', 'simp', 'delulu'],
-    tags: ['Stan', 'Twitter', 'Music']
+    tags: ['Stan', 'Twitter', 'Music'],
+    links: {
+      urbanDictionary: 'https://www.urbandictionary.com/define.php?term=Stan',
+      knowYourMeme: 'https://knowyourmeme.com/memes/stan'
+    }
   }
 ]
 
@@ -159,9 +196,9 @@ export function getRandomTerm(): Term {
 
 export function searchTerms(query: string): Term[] {
   const lowercasedQuery = query.toLowerCase()
-  return terms.filter(term => 
-    term.term.toLowerCase().includes(lowercasedQuery) || 
-    term.definition.toLowerCase().includes(lowercasedQuery) || 
+  return terms.filter(term =>
+    term.term.toLowerCase().includes(lowercasedQuery) ||
+    term.definition.toLowerCase().includes(lowercasedQuery) ||
     term.tags.some(tag => tag.toLowerCase().includes(lowercasedQuery))
   )
 }
