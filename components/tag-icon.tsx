@@ -1,39 +1,39 @@
-import { LucideCrop as LucideProps } from 'lucide-react';
-import { 
-  Music, 
-  Hash, 
-  Gamepad2, 
-  Star, 
-  Video, 
-  Sparkles, 
-  HeartCrack, 
+import type { LucideProps } from 'lucide-react'
+import {
+  Music,
+  Hash,
+  Gamepad2,
+  Star,
+  Video,
+  Sparkles,
+  HeartCrack,
   Users
-} from 'lucide-react';
-import { type Tag } from '@/lib/data';
+} from 'lucide-react'
+import { type Tag } from '@/lib/data'
 
 interface TagIconProps extends LucideProps {
-  tag: Tag;
+  tag: Tag
 }
 
 export function TagIcon({ tag, ...props }: TagIconProps) {
-  switch(tag) {
+  switch (tag) {
     case 'TikTok':
-      return <Video {...props} />;
+      return <Video {...props} />
     case 'Twitter':
-      return <Hash {...props} />;
+      return <Hash {...props} />
     case 'Gaming':
-      return <Gamepad2 {...props} />;
+      return <Gamepad2 {...props} />
     case 'Delulu':
-      return <HeartCrack {...props} />;
+      return <HeartCrack {...props} />
     case 'Music':
-      return <Music {...props} />;
+      return <Music {...props} />
     case 'Anime':
-      return <Star {...props} />;
+      return <Star {...props} />
     case 'Meme':
-      return <Sparkles {...props} />;
+      return <Sparkles {...props} />
     case 'Stan':
-      return <Users {...props} />;
+      return <Users {...props} />
     default:
-      return <Hash {...props} />;
+      return <Hash {...props} />
   }
 }
