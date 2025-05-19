@@ -49,7 +49,7 @@ export default function TermPage({ params }: { params: { id: string } }) {
                 variant="outline"
                 className={`cursor-pointer ${tagColors[tag]}`}
               >
-                <TagIcon tag={tag} className="mr-1 h-3.5 w-3.5" />
+                <TagIcon tag={tag}  />
                 {tag}
               </Badge>
             </Link>
